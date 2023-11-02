@@ -90,7 +90,7 @@ func (m Metar) GetCurrentWeather() MetarWeather {
 }
 
 func (m Metar) GetStringifiedWeather() string {
-	res := fmt.Sprintf("ICAO: %s\nTemperature: %d\nDew Point: %d\nAltimeter: %d\nAirport Name: %s\nWinds: %d Knots at %d, gusting at %d", m.Icao, m.LatestWeather.Temperature, m.LatestWeather.DewPoint, m.LatestWeather.Altimeter, m.LatestWeather.AirportName, m.LatestWeather.WindSpeed, m.LatestWeather.WindDirection, m.LatestWeather.WindGust)
+	res := fmt.Sprintf("ICAO: %s\nTemperature: %d\nDew Point: %d\nAltimeter: %d\nAirport Name: %s\nWinds: %d Knots at %d, gusting at %d\nVisibility: %s\nElevation: %d\n", m.Icao, m.LatestWeather.Temperature, m.LatestWeather.DewPoint, m.LatestWeather.Altimeter, m.LatestWeather.AirportName, m.LatestWeather.WindSpeed, m.LatestWeather.WindDirection, m.LatestWeather.WindGust, m.LatestWeather.Visibility, m.LatestWeather.Elevation)
 	return res
 }
 

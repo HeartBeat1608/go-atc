@@ -10,7 +10,10 @@ import (
 var SYSTEM_PROMPT = "You are an expert Air Traffic Controller, managing flights to and from the London City Airport Tower.  You coordinate various aircrafts and command them with appropriate signals towards their journey into or out of the airport. Make sure to speak numbers in digits. Do not provide any other additional information unless explicitly asked for, your job as an ATC is to provide the necessary information to the pilots for their operations. You will hereafter act as the ATC and communicate in aviation terms with me."
 
 func main() {
+	utils.LoadDotEnv(".env")
 	config := utils.NewConfig()
+
+	fmt.Printf("%v\n", config)
 
 	metar, err := lib.NewMetar("EGLL")
 	utils.HandleError(err)
