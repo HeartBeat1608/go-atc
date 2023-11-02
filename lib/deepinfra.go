@@ -23,9 +23,9 @@ type DeepInfraCompletionResult struct {
 	Results   []GenerationResult `json:"results"`
 }
 
-func NewDeepInfra() (DeepInfra, error) {
+func NewDeepInfra(config utils.AppConfig) (DeepInfra, error) {
 	return DeepInfra{
-		apiKey:  "EMwwysNx44qoUQAC7iUTkCr8BltJtYFq",
+		apiKey:  config.DeepInfraApiKey,
 		apiBase: "https://api.deepinfra.com/v1/inference/meta-llama/Llama-2-13b-chat-hf",
 	}, nil
 }
